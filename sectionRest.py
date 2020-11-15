@@ -43,14 +43,14 @@ def _isFull(driver):
   try:
     emptyText = driver.find_element_by_css_selector('.empty > p').text
     return '空きはございません' in emptyText
-  except Exception as e:
+  except Exception:
     return False
 
 def _isPreRelease(driver):
   try:
     preReleaseText = driver.find_element_by_css_selector('.preRelease > p').text
     return 'ご予約開始となります' in preReleaseText
-  except Exception as e:
+  except Exception:
     return False
 
 def waitingSection(driver, target):
